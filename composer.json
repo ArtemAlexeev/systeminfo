@@ -1,0 +1,23 @@
+{
+  "name": "artemalexeev/systeminfo",
+  "description": "Package shows system info of your PHP project",
+  "keywords": ["opcache"],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.0",
+    "ext-zend-opcache": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ArtemAlieksieiev\\SystemInfo\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Artem Alieksieiev",
+      "email": "artemalieksieievpersonal1010@gmail.com",
+      "role": "Developer"
+    }
+  ]
+}
