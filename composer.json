@@ -19,5 +19,8 @@
       "email": "artemalieksieievpersonal1010@gmail.com",
       "role": "Developer"
     }
-  ]
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^2.1"
+  }
 }

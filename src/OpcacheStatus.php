@@ -18,6 +18,9 @@ class OpcacheStatus
         echo json_encode($result['data'], JSON_PRETTY_PRINT);
     }
 
+    /**
+     * @return array{success: bool, data: array<string, mixed>, error: string|null}
+     */
     private function getData(): array
     {
         $status = opcache_get_status();
@@ -25,7 +28,8 @@ class OpcacheStatus
         if (false === $status) {
             return [
                 'success' => false,
-                'error'   => 'Opcache is not enabled or not available.'
+                'error'   => 'Opcache is not enabled or not available.',
+                'data'   => []
             ];
         }
 
@@ -53,10 +57,16 @@ class OpcacheStatus
 
         return [
             'success' => true,
+            'error'   => null,
             'data'    => $status
         ];
     }
 
+    /**
+     * @param array<string, mixed> $section
+     * @param array<string> $keys
+     * @return void
+     */
     private function formatMemorySection(array &$section, array $keys): void
     {
         foreach ($keys as $key) {
